@@ -1,3 +1,3 @@
 # NewRepo
 Learning git 
-## Super Idea
+### Super Idea
