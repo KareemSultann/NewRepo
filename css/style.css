@@ -1,0 +1,770 @@
+
+/* ============================================ *
+ - Project Name: Landing Page (Capsule Corp)
+ - Auther: Dupont Mickael
+ - Date: 12/6/2020
+ - Developer: Kareem Sultan
+ - Framework: Bootstrap v 3
+ - Description: Responsive static Landing Page - Figma to HTMl
+ * ============================================ */
+
+
+/* ============================================ *
+ * Reset
+ * ============================================ */
+
+ *,
+ *:before,
+ *:after { 
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-text-size-adjust: 100%; }
+body  {background:#fff; font:18px/1.35 'Poppins-Regular'; color:#000; text-align: left; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; }
+img { border: 0 none; -ms-interpolation-mode: bicubic; vertical-align: top; max-width: 100%; }
+a             { color:#000; text-decoration:none; }
+a:hover       { text-decoration:none; }
+:focus        { outline:0; }
+h1,h2,h3,h4,h5,p,label,a { margin: 0; color: #fff; }
+h2,h3 { font-size: 48px; font-family: 'Poppins-Medium'; }
+h3 {font-size: 30px;}
+p,label { font-size: 16px; line-height: 180%; letter-spacing: .2px; }
+.no-padding {
+  padding:0!important
+}
+.section-title {
+  text-align: center;
+  padding: 16px 14px 0 14px;
+}
+.section-title p {
+  margin-top: 20px;
+  line-height: 29px;
+}
+.align-lef {
+  text-align: left;
+}
+@media (min-width: 992px) {
+
+}
+
+/* ============================================ *
+ * Page Style
+ * ============================================ */
+
+body {
+  /* height: 8000px; */
+}
+.home {
+  width: 100%;
+  position: absolute;
+  display: none;
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1230px;
+  }
+  header .container {
+    width: 1037px;
+  }
+}
+@media (min-width: 1200px) {
+  header .container {
+    width: 1037px;
+  }
+}
+
+/* ============================================ *
+ * header
+ * ============================================ */
+ #particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #23014b;
+  background-image: url(style.css);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+ header {
+   position: relative;
+   overflow: hidden;
+   padding-bottom: 70px;
+   /* z-index: 999; */
+ }
+
+ header .header-banner {
+   position: absolute;
+   width: 100%;
+   height: 135%;
+   background: url(../images/updates/header-bg.svg) no-repeat center center;
+   background-size: cover;
+   z-index: 999;
+   opacity: .6;
+ }
+ .custom-container {
+   position: relative;
+   z-index: 999;
+ }
+ header .title h2 {
+  font-family: 'Poppins-Black';
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 96px;
+  text-shadow: -6px 0px 1px #DA0068, 3px -1px 1px #009CFF;
+ }
+ /*nav style*/
+
+ header .navbar-nav {
+    text-align: center;
+ }
+
+ /*nav style for desktop only*/
+
+ @media (min-width: 768px) {
+  header .navbar-nav {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    float: none;
+    margin-top: 50px;
+  }
+
+  /*nav style for both desktop & mobile*/
+
+  header .navbar-nav > li {
+    float: none;
+    flex: 1 1 auto;
+  }
+  header .nav > li > a {
+    display: inline-block;
+    padding: 0;
+  }
+  header .navbar-default .navbar-nav > .active > a,
+  header .nav > li > a:hover {
+    color: #00FFF9 !important;
+    border-bottom-color: #00FFF9!important;
+  }
+}
+  header .navbar-default,
+  header .navbar-default .navbar-collapse,
+  header .navbar-default .navbar-nav > .active > a, 
+  header .navbar-default .navbar-nav > .active > a:hover, 
+  header .navbar-default .navbar-nav > .active > a:focus {
+    background-color: transparent;
+    border: none;
+}
+  header .nav > li > a {
+    font-family: 'Poppins-Medium';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: #e2e2e2 !important;
+    letter-spacing: .2px;
+    border-bottom: 1px solid !important;
+    border-bottom-color: transparent!important;
+}
+
+@media screen and (max-width:1199px) and (min-width:768px) {
+  header .nav > li > a {
+    font-size: 12px;
+  }
+}
+
+/*hamburger toggler icon style*/
+
+header .navbar-default .navbar-toggle:focus,
+header .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+header .navbar-default .navbar-toggle {
+    border: none;
+}
+header .navbar-toggle span.icon-bar {
+    transition: all 0.15s;
+}
+header .navbar-toggle span:nth-child(2) {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+header .navbar-toggle span:nth-child(3) {
+    opacity: 0;
+}
+header .navbar-toggle span:nth-child(4) {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+header .navbar-toggle.collapsed span:nth-child(2),
+header .navbar-toggle.collapsed span:nth-child(4) {
+    transform: rotate(0);
+}
+header .navbar-toggle.collapsed span:nth-child(3) {
+    opacity: 1;
+}
+
+/*logo style*/
+
+header .logo {
+  text-align: center;
+  padding-top: 100px;
+}
+
+/*title & button & next style*/
+
+header .title {
+  text-align: center;
+  padding-top: 40px;
+}
+header .title img {
+  width: 83%;
+}
+button.contact-us-btn {
+  border: none;
+  background: #00FFF9;
+  box-shadow: 0px 8px 20px rgba(0, 255, 249, 0.2);
+  border-radius: 12px;
+  padding: 18px 35px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #3C096C;
+  font-family: 'Poppins-Bold';
+  margin-top: 40px;
+}
+header .title .learn-more {
+  display: inline-block;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(180deg, #FF90B3 0%, #C77DFF 100%);
+  box-shadow: 0px 5px 30px rgba(12, 0, 46, 0.3);
+  text-align: center;
+}
+header .title .learn-more-text {
+  display: inline-block;
+  margin-top: 129px;
+}
+header .title .learn-more-text p {
+  font-size: 12px;
+  line-height: 18px;
+  color: #FC8FB6;
+  margin-bottom: 15px;
+}
+header .title .learn-more img {
+  width: auto;
+  margin-top: 10px;
+}
+  
+/*what-we-do section*/
+
+section { overflow: hidden; position: relative; }
+section.what-we-do {
+  margin-top: -130px;
+  padding-top: 135px;
+  padding-bottom: 210px;
+  background: url(../images/updates/what-we-do.svg) no-repeat center center;
+  background-size: cover;
+  z-index: 888;
+}
+.what-we-do .what-we-do-icons {
+  text-align: center;
+  overflow: hidden;
+  margin-top: 35px;
+}
+.what-we-do .what-we-do-icons img {
+  width: 170px;
+}
+.what-we-do .what-we-do-icons h3 {
+  margin-top: 42px;
+  font-size: 24px;
+}
+.what-we-do .what-we-do-icons p {
+  margin-top: 25px;
+}
+
+.what-we-do .what-we-do-icons .resources > p {
+  width: 102%;
+}
+
+/*our-fleet section*/
+
+.our-fleet .our-fleet-title {
+  padding-top: 32px;
+}
+.our-fleet .our-fleet-title p {
+  margin-top: 27px;
+}
+.our-fleet {
+  padding-top: 177px;
+  padding-bottom: 160px;
+  margin-top: -105px;
+  background: url(../images/updates/our-fleet-bg.svg) no-repeat center center;
+  background-size: cover;
+  background-position-y: bottom;
+  z-index: 666;
+}
+.our-fleet .our-fleet-info {
+  text-align: center;
+  max-width: 370px;
+  height: 370px;
+  margin: auto;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #411881 0%, #1183AD 100%);
+  box-shadow: 0px 5px 30px rgba(12, 0, 46, 0.3);
+  overflow: hidden;
+  margin-bottom: 45px;
+}
+.our-fleet .our-fleet-info .fleet-img-container {
+  background-color: #fff;
+}
+.our-fleet .our-fleet-info .fleet-img-container img {
+  width: 100%;
+  height: 180px;
+}
+.our-fleet .our-fleet-info p {
+  margin-top: 55px;
+}
+
+/*who-we-are section*/
+
+.who-we-are,
+.our-stacks {
+  margin-top: 90px;
+}
+.who-we-are .who-we-are-images {
+  text-align: center;
+  margin-top: 29px;
+}
+.who-we-are .who-we-are-images h3 {
+  font-size: 24px;
+}
+.who-we-are .who-we-are-images > img {
+  width: 45%;
+  box-shadow: 0px 5px 30px rgba(12, 0, 50, 0.3);
+  margin-bottom: 30px;
+}
+ 
+/*our-stacks*/
+
+.our-stacks .our-stacks-logos-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.our-stacks .our-stacks-logos-container .our-stacks-logos {
+  width: 170px;
+  height: auto;
+  text-align: center;
+  overflow: inherit;
+}
+.our-stacks .our-stacks-logos-container .our-stacks-logos .icon-circle {
+  width: 100%;
+  height: 170px;
+  border-radius: 50%;
+  background: linear-gradient(39.47deg, #3C0F73 12.18%, #BC2280 85.81%);
+  box-shadow: 0px 5px 30px rgba(12, 0, 46, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.our-stacks .our-stacks-logos-container .our-stacks-logos h3 {
+  font-size: 25px;
+  padding-top: 20px;
+  line-height: 36px;
+}
+/*what-we-are-looking-for*/
+
+.what-we-are-looking-for {
+  padding-top: 205px;
+  padding-bottom: 175px;
+  margin-top: -125px;
+  background: url(../images/updates/texture-bg.svg) no-repeat center center;
+  background-size: cover;
+  background-position-y: bottom;
+  z-index: 555;
+}
+.what-we-are-looking-for .chart img {
+  width: 100%;
+}
+.what-we-are-looking-for .what-we-are-looking-for-title h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  line-height: 51px;
+}
+.what-we-are-looking-for .what-we-are-looking-for-title h3 {
+  color: #00FFF9;
+  font-size: 24px;
+}
+.what-we-are-looking-for .what-we-are-looking-for-title p {
+  margin-bottom: 10px;
+}
+
+/* join-with-us */
+
+
+.join-with-us .details .details-icon {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: linear-gradient(41.99deg, #290A59 15.29%, #3D57F4 82.54%);
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+  z-index: 777;
+  position: relative;
+}
+.join-with-us .details .details-icon img {
+    width: 60%;
+    margin-top: 40px;
+    display: inline-block;
+}
+.join-with-us .details .details-text {
+  background: #240046;
+  box-shadow: 0px 5px 30px rgba(12, 0, 46, 0.3);
+  border-radius: 20px;
+  margin: auto;
+  margin-top: -80px;
+  text-align: center;
+  padding: 117px 20px 0;
+  height: 270px;
+  max-width: 370px;
+}
+.join-with-us .details .details-text h3 {
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+/* aboard */
+
+.contact-us {
+  width: 58%;
+  margin:auto;
+  padding: 75px 72px 50px;
+  margin-top: 44px;
+  background: linear-gradient(49.8deg, #411881 0%, #9B2BDC 100%);
+  box-shadow: 0px 5px 30px rgba(12, 0, 46, 0.3);
+  border-radius: 20px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-control {
+  padding: 28px 12px;
+  border-radius: 18px;
+}
+.form-group label {
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 180%;
+}
+.contact-us .contact-us-btn {
+  display: block;
+  width: 100%;
+  margin-top: 41px;
+}
+
+/* footer */
+footer {
+  padding-top: 168px;
+  padding-bottom: 70px;
+  margin-top: -165px;
+  background: url(../images/updates/footer-bg.svg) no-repeat center center;
+  background-size: cover;
+}
+
+footer .logo {
+  text-align: center;
+  padding-top: 10px;
+}
+footer .social {
+  margin-top: 60px;
+}
+footer .social p {
+  margin-bottom: 0x;
+}
+footer .social a {
+  display: inline-block;
+  padding: 0px 13px;
+}
+footer .social a img {
+  width: 50px;
+  height: 50px;
+}
+footer .privacy {
+  margin-top: 38px;
+}
+footer .privacy a {
+  padding: 0 17px;
+  font-size: 14px;
+}
+footer .privacy a:nth-of-type(2) {
+  position: relative;
+}
+footer .privacy a:nth-of-type(2):after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 15px;
+  background-color: #fff;
+  top: 5px;
+  right: 0;
+}
+footer .privacy a:nth-of-type(2):before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 15px;
+  background-color: #fff;
+  top: 5px;
+  left: 0;
+}
+footer .all-rights {
+  color: #fff;
+  margin-top: 30px;
+  font-size: 14px;
+}
+ /* ============================================ *
+ * back to top
+ * ============================================ */
+ .back-to-top {
+  position: fixed;
+  right: 1%;
+  bottom: -7.5%;
+  padding: 8px;
+  font-size: 10px;
+  color: transparent;
+  visibility: hidden;
+  text-align: center;
+  border: 1px solid #f86d2c;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  background-color: #f86d2c;
+  border-radius: 4px;
+  z-index: 999;
+}
+.back-to-top img {
+  width: 25px;
+}
+@media(min-width: 768px) {
+  .back-to-top:hover {
+    text-decoration: none;
+    background-color: transparent !important;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+  }
+}
+.show-back-to-top {
+  display: block;
+  bottom: 1.25%;
+  visibility: visible;
+}
+
+
+
+
+/*responsive style for mobile*/
+
+@media (max-width: 991px) {
+  header .title h2 {
+    font-size: 30px;
+  }
+  .our-fleet,
+  section.what-we-do {
+    padding-top: 70px;
+  }
+  .our-fleet .our-fleet-title {
+    padding: 10px 10px 0 10px;
+    margin-bottom: 50px;
+  }
+  .what-we-do .what-we-do-icons p,
+  .who-we-are .who-we-are-images p {
+    font-size: 14px;
+  }
+  .what-we-do .what-we-do-icons h3 {
+    font-size: 26px;
+  }
+  .who-we-are .who-we-are-images h3 {
+    font-size: 20px;
+  }
+  .what-we-are-looking-for .what-we-are-looking-for-title {
+    padding-left: 0!important;
+  }
+  .what-we-are-looking-for .what-we-are-looking-for-title h2 {
+    font-size: 35px;
+    margin-top: 30px;
+  }
+  .join-with-us .details {
+    margin-bottom: 20px;
+  }
+  .our-stacks .our-stacks-logos-container {
+    flex-direction: column;
+  }
+  .our-stacks .our-stacks-logos-container .our-stacks-logos {
+    margin-bottom: 55px;
+  }
+  .what-we-are-looking-for {
+    padding-bottom: 230px;
+  }
+}
+@media(min-width: 1570px) {
+  header .header-banner {
+    height: 128%;
+  }
+  section.what-we-do {
+    padding-bottom: 308px;
+  }
+}
+@media(min-width:1700px) {
+  header .header-banner {
+    height: 119%;
+  }
+  section.what-we-do {
+    background-position-y: bottom;
+    margin-bottom: -20px;
+  }
+  .what-we-are-looking-for {
+    margin-top: -160px;
+    padding-bottom: 240px;
+    background-color: #18043c;
+  }
+}
+@media(min-width:992px) {
+  .our-fleet .our-fleet-title {
+    padding-left: 0;
+    padding-top: 75px;
+    text-align: left;
+  }
+  .our-stacks .our-stacks-logos-container .our-stacks-logos:first-child .icon-circle {
+    margin-top: 65px;
+  } 
+  .our-stacks .our-stacks-logos-container .our-stacks-logos:last-child .icon-circle {
+    margin-top: 100px;
+  }
+  .our-stacks .our-stacks-logos-container .our-stacks-logos:nth-child(3) .icon-circle {
+    margin-top: -38px;
+  }
+
+  .aboard {
+    margin-top: 110px;
+  }
+  /* what-we-are-looking-for */
+
+.what-we-are-looking-for .what-we-are-looking-for-title {
+  padding-left: 40px;
+  padding-top: 35px;
+  }
+  .join-with-us {
+    margin-top: 94px;
+  }
+}
+
+@media (min-width: 768px) {
+  .our-stacks .our-stacks-logos-container {
+    flex-wrap: nowrap;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 400px) {
+  header .title h2 {
+    font-size: 20px;
+  }
+  .join-with-us .details .details-text p {
+    font-size: 14px;
+  }
+  .contact-us {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  footer .privacy a {
+    padding: 0px 7px;
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 767px) {
+
+  /*nav*/
+
+  header .nav > li > a {
+    background-color: #7918f5;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.5) !important;
+  }
+  header .navbar-default .navbar-nav > .active > a {
+    background-color: #2c0c58;
+    color: #00FFF9!important;
+  }
+
+  /*section-title*/
+
+  .section-title {
+    padding: 10px 10px 0 10px;
+    margin-bottom: 50px;
+  }
+  .section-title > h2 {
+    font-size: 35px;
+  }
+  .section-title > p {
+    font-size: 14px;
+  }
+
+  /*what-we-do*/
+
+  .what-we-do .what-we-do-icons {
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+
+  /*.who-we-are .who-we-are-images*/
+
+  .who-we-are, .our-stacks {
+    margin-top: 0;
+  }
+
+  .who-we-are .who-we-are-images {
+    margin-bottom: 50px;
+    margin-top: 0;
+  }
+
+  .our-fleet .our-fleet-info p {
+    font-size: 15px;
+  }
+  .our-fleet {
+    padding-top: 110px;
+    margin-top: -250px;
+    padding-bottom: 280px;
+  }
+  .our-stacks .our-stacks-logos-container .our-stacks-logos {
+    margin-bottom: 20px;
+  }
+  .what-we-are-looking-for {
+    margin-top: -325px;
+  }
+  /* contact-us */
+
+  .contact-us {
+    width: 100%;
+  }
+  .join-with-us .details .details-icon,
+  .contact-us {
+    margin-top: 0;
+  }
+  .aboard {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width:1199px) and (min-width:768px) {
+  .our-fleet .our-fleet-info p {
+    font-size: 14px;
+  }
+}
